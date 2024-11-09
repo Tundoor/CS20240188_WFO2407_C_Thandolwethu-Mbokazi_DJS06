@@ -18,3 +18,11 @@ const products = [
 provinces.forEach((province) =>{
    console.log(province)
 })
+
+names.forEach((name) => {
+  console.log(name)
+})
+
+
+let newProv = provinces.map(province => province.toUpperCase());
+console.log(newProv)

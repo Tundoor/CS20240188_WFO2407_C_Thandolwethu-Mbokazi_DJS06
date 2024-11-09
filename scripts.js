@@ -19,10 +19,30 @@ provinces.forEach((province) =>{
    console.log(province)
 })
 
+// come back to do this
 names.forEach((name) => {
   console.log(name)
 })
 
+// For Each Loop takes a name and index as a varieble
+
+names.forEach((name, index) => {
+  console.log(`${name} (${provinces[index]})`);
+});
+
 
 let newProv = provinces.map(province => province.toUpperCase());
 console.log(newProv)
+
+let nameLengths = names.map( name => name.length)
+console.log(nameLengths)
+
+console.log(provinces.sort())
+
+// logs number of provinces not including Cape
+let filteredArr = provinces.filter((province) => !province.includes("Cape"))
+console.log(filteredArr.length)
+
+// Checks if includes S
+let ContainS = names.map((name) => name.includes("S"))
+console.log(ContainS)

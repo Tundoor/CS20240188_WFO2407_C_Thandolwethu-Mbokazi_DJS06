@@ -13,3 +13,8 @@ const products = [
   { product: 'coffee', price: 10 },
   { product: 'tea', price: '' },
 ]
+
+// log each province to console
+provinces.forEach((province) =>{
+   console.log(province)
+})

@@ -76,7 +76,7 @@ console.log (
 console.log( "Total price:" ,
   products.filter( (product) => product.price !== "")
     .map((product) => Number(product.price))
-  .reduce((accumulator, price) => accumulator + price, 0))
+  .reduce((accumulator, current) => accumulator + current, 0))
 
   //Make all product names string thats concatenated 
 
@@ -88,6 +88,23 @@ console.log( "Total price:" ,
     // The spread operator is used to get the individual prices fromm the array
 
     console.log(
-      "Highest:", Math.max(...products.map((product) => product.price)))
+      "Highest:", Math.max(...products.map((product) => product.price)),
+      "Lowest:", Math.min(...products.map((product) => product.price)))
 
-
+      //Change the key and value of the object
+    
+      console.log(
+        products.map(product => 
+          // object entries returned an array nested in an array and 
+          //then reduce is used to make it an object
+          Object.entries(product).reduce((acc, [key, value]) => {
+            // checks the key values of the object and changes them
+            if (key === 'product') {
+              acc['name'] = value;
+            } else if (key === 'price') {
+              acc['cost'] = value;
+            }
+            return acc;
+          }, {})
+        )
+      )

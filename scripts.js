@@ -78,4 +78,16 @@ console.log( "Total price:" ,
     .map((product) => Number(product.price))
   .reduce((accumulator, price) => accumulator + price, 0))
 
+  //Make all product names string thats concatenated 
+
+  console.log(
+    products.map((product) => product.product).reduce((acc, current) => acc + current)
+    )
+
+    // Logs highest and lowest price
+    // The spread operator is used to get the individual prices fromm the array
+
+    console.log(
+      "Highest:", Math.max(...products.map((product) => product.price)))
+
 

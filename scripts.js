@@ -46,3 +46,26 @@ console.log(filteredArr.length)
 // Checks if includes S
 let ContainS = names.map((name) => name.includes("S"))
 console.log(ContainS)
+
+
+// reduce mapping object
+// name is in square brackets so that it takes name and makes it a key in the object created
+// index gets us the indices of the differen provinces
+let reduceMethod = names.reduce( (accumulator, name, index) => {
+  accumulator[name] = provinces[index];
+  return accumulator;
+}, {} )
+
+// logs an array of names to the console
+
+console.log(products.map( (productItem) => productItem.product))
+
+// Gets the values of the diffent names in the array and then filters out those with a length greater than five
+console.log( 
+  products.map( (productItem) => productItem.product).filter((name) =>  name.length > 5)
+
+)
+
+
+
+

@@ -8,7 +8,7 @@ const names = ['Ashwin', 'Sibongile', 'Jan-Hendrik', 'Sifso', 'Shailen', 'Frikki
 const products = [
   { product: 'banana', price: "2" },
   { product: 'mango', price: 6 },
-  { product: 'potato', price: ' ' },
+  { product: 'potato', price: '' },
   { product: 'avocado', price: "8" },
   { product: 'coffee', price: 10 },
   { product: 'tea', price: '' },
@@ -66,6 +66,16 @@ console.log(
 
 )
 
+// Fliter out prices with no prices and changes them into numbers
+console.log (
+  products.filter((product) => product.price !== "")
+     .map((product) => Number(product.price))
+)
 
+// adds the prices together
+console.log( "Total price:" ,
+  products.filter( (product) => product.price !== "")
+    .map((product) => Number(product.price))
+  .reduce((accumulator, price) => accumulator + price, 0))
 
 
